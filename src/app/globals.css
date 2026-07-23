@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   --background: #f8fafc;
@@ -125,4 +126,648 @@ section[id] {
 
 .mobile-menu-open {
   animation: mobile-menu-open 200ms ease-out;
+}
+
+/* ======================================================
+   AI / ML HERO DESIGN
+====================================================== */
+
+.hero-ai-background {
+  background:
+    radial-gradient(
+      circle at 76% 42%,
+      rgba(37, 99, 235, 0.13),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 60% 54%,
+      rgba(124, 58, 237, 0.16),
+      transparent 38%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(248, 250, 252, 0.98),
+      rgba(245, 243, 255, 0.95) 48%,
+      rgba(239, 246, 255, 0.97)
+    );
+}
+
+.dark .hero-ai-background {
+  background:
+    radial-gradient(
+      circle at 76% 42%,
+      rgba(37, 99, 235, 0.21),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 60% 54%,
+      rgba(124, 58, 237, 0.23),
+      transparent 40%
+    ),
+    linear-gradient(
+      135deg,
+      #040611,
+      #07091a 48%,
+      #050816
+    );
+}
+
+/* Technical grid */
+
+.hero-grid {
+  opacity: 0.28;
+  background-image:
+    linear-gradient(
+      rgba(99, 102, 241, 0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(99, 102, 241, 0.08) 1px,
+      transparent 1px
+    );
+  background-size: 54px 54px;
+  mask-image:
+    linear-gradient(
+      to right,
+      transparent,
+      black 18%,
+      black 88%,
+      transparent
+    );
+}
+
+.dark .hero-grid {
+  opacity: 0.44;
+  background-image:
+    linear-gradient(
+      rgba(59, 130, 246, 0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(139, 92, 246, 0.08) 1px,
+      transparent 1px
+    );
+}
+
+/* Name gradient */
+
+.hero-name-gradient {
+  background:
+    linear-gradient(
+      90deg,
+      #7c3aed,
+      #6366f1 48%,
+      #2563eb
+    );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.dark .hero-name-gradient {
+  background:
+    linear-gradient(
+      90deg,
+      #c084fc,
+      #8b5cf6 42%,
+      #38bdf8
+    );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Main button */
+
+.hero-primary-button {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      100deg,
+      #7c3aed,
+      #4f46e5,
+      #2563eb
+    );
+  box-shadow:
+    0 14px 35px rgba(124, 58, 237, 0.22);
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.hero-primary-button::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background:
+    linear-gradient(
+      110deg,
+      transparent 20%,
+      rgba(255, 255, 255, 0.28) 45%,
+      transparent 70%
+    );
+  transform: translateX(-140%);
+  transition: transform 600ms ease;
+}
+
+.hero-primary-button:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 18px 40px rgba(124, 58, 237, 0.35);
+}
+
+.hero-primary-button:hover::before {
+  transform: translateX(140%);
+}
+
+/* Profile stage */
+
+.hero-ai-stage {
+  isolation: isolate;
+}
+
+/* Orbit rings */
+
+.hero-orbit {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  pointer-events: none;
+  border-radius: 9999px;
+  transform: translate(-50%, -50%);
+}
+
+.hero-orbit-outer {
+  width: 500px;
+  height: 500px;
+  border: 1px dashed rgba(99, 102, 241, 0.34);
+  animation: hero-orbit-clockwise 32s linear infinite;
+}
+
+.hero-orbit-middle {
+  width: 425px;
+  height: 425px;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  animation: hero-orbit-counterclockwise 25s linear infinite;
+}
+
+.hero-orbit-inner {
+  width: 370px;
+  height: 370px;
+  border: 2px solid rgba(59, 130, 246, 0.42);
+  box-shadow:
+    0 0 42px rgba(37, 99, 235, 0.14);
+  animation: hero-pulse-ring 4s ease-in-out infinite;
+}
+
+.dark .hero-orbit-outer {
+  border-color: rgba(99, 102, 241, 0.47);
+}
+
+.dark .hero-orbit-middle {
+  border-color: rgba(168, 85, 247, 0.42);
+}
+
+.dark .hero-orbit-inner {
+  border-color: rgba(56, 189, 248, 0.58);
+  box-shadow:
+    0 0 55px rgba(59, 130, 246, 0.24);
+}
+
+/* Profile */
+
+.hero-profile-shell {
+  background:
+    linear-gradient(
+      135deg,
+      #a855f7,
+      #6366f1 48%,
+      #0ea5e9
+    );
+  box-shadow:
+    0 0 0 12px rgba(139, 92, 246, 0.06),
+    0 0 55px rgba(124, 58, 237, 0.23),
+    0 0 100px rgba(37, 99, 235, 0.15);
+}
+
+.dark .hero-profile-shell {
+  box-shadow:
+    0 0 0 12px rgba(139, 92, 246, 0.08),
+    0 0 68px rgba(124, 58, 237, 0.35),
+    0 0 125px rgba(37, 99, 235, 0.2);
+}
+
+.hero-profile-inner {
+  border: 5px solid var(--surface-strong);
+  background: var(--surface-strong);
+}
+
+/* Orbit nodes */
+
+.hero-orbit-node {
+  position: absolute;
+  z-index: 3;
+  width: 11px;
+  height: 11px;
+  border: 2px solid rgba(255, 255, 255, 0.72);
+  border-radius: 9999px;
+  background: #8b5cf6;
+  box-shadow:
+    0 0 16px rgba(139, 92, 246, 0.85);
+  animation: hero-node-pulse 2.8s ease-in-out infinite;
+}
+
+.hero-orbit-node-1 {
+  left: 14%;
+  top: 34%;
+}
+
+.hero-orbit-node-2 {
+  right: 9%;
+  top: 29%;
+  animation-delay: 0.7s;
+}
+
+.hero-orbit-node-3 {
+  right: 17%;
+  bottom: 13%;
+  animation-delay: 1.4s;
+}
+
+.hero-orbit-node-4 {
+  left: 18%;
+  bottom: 16%;
+  animation-delay: 2.1s;
+}
+
+/* Technology badges */
+
+.hero-tech-badge {
+  position: absolute;
+  z-index: 20;
+  display: none;
+  min-width: 132px;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.9rem;
+  color: var(--foreground);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow:
+    0 16px 40px rgba(15, 23, 42, 0.12);
+  backdrop-filter: blur(18px);
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition:
+    transform 200ms ease,
+    border-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.dark .hero-tech-badge {
+  background: rgba(8, 12, 26, 0.84);
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.3),
+    inset 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.hero-tech-badge:hover {
+  z-index: 30;
+  border-color: rgba(139, 92, 246, 0.6);
+  transform: translateY(-5px);
+  box-shadow:
+    0 20px 50px rgba(124, 58, 237, 0.2);
+}
+
+.hero-tech-python {
+  left: 8%;
+  top: 7%;
+  animation: hero-float-one 5s ease-in-out infinite;
+}
+
+.hero-tech-langchain {
+  right: -7%;
+  top: 22%;
+  animation: hero-float-two 6s ease-in-out infinite;
+}
+
+.hero-tech-pytorch {
+  right: -10%;
+  bottom: 26%;
+  animation: hero-float-one 5.5s ease-in-out infinite;
+}
+
+.hero-tech-dotnet {
+  right: 3%;
+  bottom: 2%;
+  animation: hero-float-two 6.5s ease-in-out infinite;
+}
+
+/* Large neural-network silhouette */
+
+.hero-neural-shape {
+  width: 570px;
+  height: 690px;
+  opacity: 0.68;
+}
+
+.hero-neural-head {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius:
+    48% 52% 45% 55% /
+    40% 42% 58% 60%;
+  background:
+    radial-gradient(
+      circle at 44% 34%,
+      rgba(59, 130, 246, 0.2),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 54% 56%,
+      rgba(139, 92, 246, 0.22),
+      transparent 44%
+    );
+  mask-image:
+    linear-gradient(
+      to left,
+      black,
+      transparent 92%
+    );
+}
+
+.hero-neural-lines {
+  position: absolute;
+  inset: 8%;
+  border-radius: inherit;
+  opacity: 0.48;
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(139, 92, 246, 0.75) 1.5px,
+      transparent 2px
+    );
+  background-size: 25px 25px;
+  animation: hero-neural-drift 14s ease-in-out infinite alternate;
+}
+
+.hero-neural-node {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 9999px;
+  background: #8b5cf6;
+  box-shadow:
+    0 0 15px rgba(139, 92, 246, 0.9);
+}
+
+.hero-node-1 {
+  left: 22%;
+  top: 23%;
+}
+
+.hero-node-2 {
+  left: 52%;
+  top: 15%;
+}
+
+.hero-node-3 {
+  right: 19%;
+  top: 38%;
+}
+
+.hero-node-4 {
+  left: 34%;
+  top: 54%;
+}
+
+.hero-node-5 {
+  right: 25%;
+  bottom: 24%;
+}
+
+.hero-node-6 {
+  left: 48%;
+  bottom: 13%;
+}
+
+/* Background particles */
+
+.hero-particle {
+  width: 5px;
+  height: 5px;
+  border-radius: 9999px;
+  opacity: 0.7;
+  background:
+    linear-gradient(
+      135deg,
+      #8b5cf6,
+      #38bdf8
+    );
+  box-shadow:
+    0 0 15px rgba(99, 102, 241, 0.65);
+  animation: hero-particle-float 5s ease-in-out infinite;
+}
+
+/* Animations */
+
+@keyframes hero-orbit-clockwise {
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(0deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(360deg);
+  }
+}
+
+@keyframes hero-orbit-counterclockwise {
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(360deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(0deg);
+  }
+}
+
+@keyframes hero-pulse-ring {
+  0%,
+  100% {
+    opacity: 0.65;
+    transform:
+      translate(-50%, -50%)
+      scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform:
+      translate(-50%, -50%)
+      scale(1.025);
+  }
+}
+
+@keyframes hero-node-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(0.85);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes hero-float-one {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+@keyframes hero-float-two {
+  0%,
+  100% {
+    transform: translateY(-3px);
+  }
+
+  50% {
+    transform: translateY(7px);
+  }
+}
+
+@keyframes hero-neural-drift {
+  from {
+    transform:
+      translate3d(-8px, -4px, 0)
+      scale(0.99);
+  }
+
+  to {
+    transform:
+      translate3d(10px, 8px, 0)
+      scale(1.02);
+  }
+}
+
+@keyframes hero-particle-float {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: translateY(0) scale(0.8);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: translateY(-18px) scale(1.15);
+  }
+}
+
+/* Responsive */
+
+@media (min-width: 640px) {
+  .hero-tech-badge {
+    display: flex;
+  }
+}
+
+@media (max-width: 1279px) {
+  .hero-tech-langchain {
+    right: -1rem;
+  }
+
+  .hero-tech-pytorch {
+    right: -1.5rem;
+  }
+
+  .hero-tech-dotnet {
+    right: 0.5rem;
+  }
+}
+
+@media (max-width: 1023px) {
+  .hero-ai-stage {
+    margin-top: 1rem;
+  }
+
+  .hero-orbit-outer {
+    width: 445px;
+    height: 445px;
+  }
+
+  .hero-orbit-middle {
+    width: 390px;
+    height: 390px;
+  }
+
+  .hero-orbit-inner {
+    width: 350px;
+    height: 350px;
+  }
+
+  .hero-tech-python {
+    left: 5%;
+  }
+}
+
+@media (max-width: 639px) {
+  .hero-ai-stage {
+    height: 350px;
+  }
+
+  .hero-orbit-outer {
+    width: 330px;
+    height: 330px;
+  }
+
+  .hero-orbit-middle {
+    width: 300px;
+    height: 300px;
+  }
+
+  .hero-orbit-inner {
+    width: 275px;
+    height: 275px;
+  }
+
+  .hero-grid {
+    background-size: 38px 38px;
+  }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-orbit,
+  .hero-tech-badge,
+  .hero-particle,
+  .hero-neural-lines,
+  .hero-orbit-node {
+    animation: none !important;
+  }
+
+  .hero-primary-button,
+  .hero-tech-badge {
+    transition: none;
+  }
 }

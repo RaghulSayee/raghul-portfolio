@@ -174,56 +174,86 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/",
     featured: true,
   },
-  {
-    slug: "traffic-violation",
-    title: "Traffic Violation Detection",
-    category: "Computer Vision Research",
-    summary:
-      "An automated traffic-violation detection and vehicle-identification pipeline.",
-    description:
-      "Designed a YOLOv4, CNN, and OCR pipeline for automated traffic-violation detection, vehicle identification, and real-time classification and reporting.",
-    image: "/projects/traffic-violation.png",
-    technologies: [
-      "Python",
-      "YOLOv4",
-      "CNN",
-      "OCR",
-      "OpenCV",
-      "Computer Vision",
-    ],
-    highlights: [
-      "Vehicle and violation detection",
-      "Number-plate recognition",
-      "Real-time classification",
-      "Automated reporting",
-      "Published at NCACT'23 in IJIRSET",
-    ],
-    responsibilities: [
-      "Designed the complete computer-vision pipeline.",
-      "Used YOLOv4 for object and vehicle detection.",
-      "Applied CNN-based classification for violation identification.",
-      "Integrated OCR for vehicle-number extraction.",
-      "Built the reporting workflow and evaluated the system.",
-    ],
-    challenges: [
-      "Detecting vehicles across changing traffic conditions.",
-      "Reading license plates from low-quality frames.",
-      "Combining multiple computer-vision stages reliably.",
-      "Supporting real-time processing.",
-    ],
-    solutions: [
-      "Used YOLOv4 for efficient object localization.",
-      "Applied image preprocessing before OCR.",
-      "Separated detection, classification, and recognition into modular stages.",
-      "Optimized the processing sequence for real-time reporting.",
-    ],
-    results: [
-      "Demonstrated automated traffic-violation classification and reporting.",
-      "Supported vehicle identification using OCR.",
-      "Published the research at NCACT'23 in IJIRSET.",
-    ],
-    featured: true,
-  },
+{
+  slug: "traffic-intelligence-platform",
+  title: "Traffic Intelligence Platform",
+  category: "AI • Computer Vision • Full Stack",
+  summary:
+    "A production-oriented traffic monitoring and violation-review platform that processes road footage, detects traffic-rule violations, generates evidence, and supports authenticated human review workflows.",
+  description:
+    "Designed and developed a full-stack traffic intelligence platform using Next.js, FastAPI, PostgreSQL, YOLO, multi-object tracking, scene-aware reasoning, authentication, evidence generation, and Docker-based deployment. The system transforms uploaded traffic-surveillance footage into structured violation events that administrators and reviewers can inspect, confirm, or reject.",
+  image: "/projects/traffic-violation.png",
+  technologies: [
+    "Next.js",
+    "TypeScript",
+    "FastAPI",
+    "Python",
+    "PostgreSQL",
+    "YOLO",
+    "OpenCV",
+    "SQLAlchemy",
+    "Docker",
+    "Nginx",
+  ],
+
+  featured: true,
+
+  githubUrl:
+    "https://github.com/RaghulSayee/traffic-intelligence-platform",
+
+  liveUrl:
+    "https://traffic-intelligence-platform-lq7f.onrender.com",
+
+  highlights: [
+    "Built a full-stack traffic monitoring dashboard for managing cameras, road-scene configurations, videos, processing jobs, analytics, and violation reviews.",
+    "Implemented YOLO-based detection and multi-object tracking for vehicles, motorcycles, riders, helmets, and traffic-signal regions.",
+    "Developed scene-aware reasoning for red-light violations, lane violations, wrong-way driving, triple riding, and no-helmet riding.",
+    "Generated evidence images and annotated preview videos for human review.",
+    "Implemented authenticated administrator and reviewer workflows using JWT access tokens stored in HttpOnly cookies.",
+    "Deployed Next.js, FastAPI, Nginx, PostgreSQL integration, and the optional processing worker through a production Docker container on Render.",
+  ],
+
+  responsibilities: [
+    "Designed the system architecture spanning the Next.js frontend, FastAPI backend, PostgreSQL database, video-processing worker, storage layer, and Nginx reverse proxy.",
+    "Implemented REST APIs for cameras, traffic-scene configuration, video uploads, processing jobs, violations, analytics, authentication, and user authorization.",
+    "Built the computer-vision pipeline using YOLO detection, Kalman-filter-based tracking, trajectory analysis, and rider-to-motorcycle association.",
+    "Created scene-geometry models for lanes, monitoring zones, stop lines, signal regions, and allowed travel directions.",
+    "Developed rule-based violation reasoning and confidence scoring.",
+    "Built evidence-review workflows that allow reviewers to confirm or reject violations and add notes.",
+    "Configured Alembic migrations, Docker deployment, Nginx routing, health checks, and environment-based production settings.",
+    "Created backend and frontend validation workflows, including 207 automated backend tests.",
+  ],
+
+  challenges: [
+    "Maintaining consistent object identities across video frames while handling missed detections and temporary occlusions.",
+    "Mapping tracked objects to camera-specific lanes, stop lines, signal regions, and allowed travel directions.",
+    "Distinguishing actual traffic violations from short-lived or low-confidence detection noise.",
+    "Associating riders and helmets with the correct motorcycle across changing positions and camera perspectives.",
+    "Generating reviewable evidence without blocking API requests during long-running video processing.",
+    "Securing frontend, backend, and internal server-to-server requests through a single production domain.",
+    "Deploying computer-vision dependencies within a resource-constrained public hosting environment.",
+  ],
+
+  solutions: [
+    "Used multi-object tracking with motion prediction and association logic to preserve object identities across frames.",
+    "Created configurable scene geometry and validation rules for each traffic camera.",
+    "Combined detection confidence, tracking history, scene context, and rule confidence before creating violations.",
+    "Implemented rider-to-motorcycle association using spatial relationships and temporal consistency.",
+    "Separated video processing into asynchronous jobs with queued, running, completed, failed, and cancelled states.",
+    "Used Nginx to route Next.js pages and FastAPI endpoints through the same production domain.",
+    "Implemented JWT authentication with HttpOnly cookies, role-based authorization, and a private internal API key.",
+    "Used Docker, Alembic startup migrations, health endpoints, and environment-controlled worker execution for deployment.",
+  ],
+
+  results: [
+    "Delivered a working full-stack traffic intelligence application with a publicly accessible production deployment.",
+    "Supported five traffic-violation categories: red-light, lane, wrong-way, triple-riding, and no-helmet violations.",
+    "Created end-to-end workflows from video upload and processing through evidence generation and human review.",
+    "Implemented pagination, filtering, processing metrics, review-status tracking, and analytics dashboards.",
+    "Established automated validation with 207 backend tests covering APIs, security, scene validation, processing logic, and reasoning components.",
+    "Published the complete source code, deployment configuration, documentation, and local-development workflow on GitHub.",
+  ],
+},
 ];
 
 export function getProjectBySlug(slug: string) {

@@ -88,7 +88,7 @@ function ProjectCard({ project }: ProjectCardProps) {
         <div className="mt-7 flex flex-wrap gap-3">
           <Link
             href={`/projects/${project.slug}`}
-            className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-violet-600 to-blue-600 px-5 py-2.5 text-sm font-semibold theme-text transition hover:shadow-lg hover:shadow-violet-500/20"
+            className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-violet-600 to-blue-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:shadow-lg hover:shadow-violet-500/20"
           >
             View Details
             <ArrowUpRight size={17} />
@@ -99,7 +99,7 @@ function ProjectCard({ project }: ProjectCardProps) {
               href={project.githubUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg border theme-border theme-surface px-5 py-2.5 text-sm font-semibold text-slate-200 transition hover:border-violet-400 hover:text-violet-300"
+              className="inline-flex items-center gap-2 rounded-lg border border-violet-500/40 bg-violet-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-violet-400 hover:bg-violet-500"
             >
               <FaGithub size={17} />
               GitHub

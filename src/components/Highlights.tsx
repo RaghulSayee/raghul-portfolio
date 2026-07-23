@@ -101,7 +101,7 @@ export default function Highlights() {
                       <Icon size={27} />
                     </div>
 
-                    <span className="rounded-full border theme-border theme-surface-strong px-3 py-1.5 text-xs font-medium text-violet-300">
+                    <span className="rounded-full border border-violet-300 bg-violet-50 px-3 py-1.5 text-xs font-semibold text-violet-700 dark:border-violet-500/30 dark:bg-violet-500/10 dark:text-violet-300">
                       {item.category}
                     </span>
                   </div>

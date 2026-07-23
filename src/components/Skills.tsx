@@ -18,7 +18,8 @@ type SkillCategory = {
 const skillCategories: SkillCategory[] = [
   {
     title: "Programming Languages",
-    description: "Languages used across backend, frontend, AI, and data systems.",
+    description:
+      "Languages used across backend, frontend, AI, and data systems.",
     icon: Code2,
     skills: [
       "Python",
@@ -47,6 +48,8 @@ const skillCategories: SkillCategory[] = [
       "OpenCV",
       "YOLO",
       "OCR",
+      "Multi-Object Tracking",
+      "Trajectory Analysis",
     ],
   },
   {
@@ -58,11 +61,12 @@ const skillCategories: SkillCategory[] = [
       "Spring Boot",
       ".NET 8",
       "ASP.NET Core",
+      "FastAPI",
       "Flask",
       "REST APIs",
       "Microservices",
       "API Integration",
-      "Backend Services",
+      "Authentication & Authorization",
     ],
   },
   {
@@ -89,12 +93,15 @@ const skillCategories: SkillCategory[] = [
     skills: [
       "AWS",
       "Docker",
+      "Nginx",
+      "Render",
       "Jenkins",
       "Git",
       "Linux",
       "Postman",
       "CI/CD",
       "Vercel",
+      "FFmpeg",
     ],
   },
   {
@@ -103,7 +110,10 @@ const skillCategories: SkillCategory[] = [
       "Databases, analytics, and large-scale data processing technologies.",
     icon: Database,
     skills: [
+      "PostgreSQL",
       "SQL Server",
+      "SQLAlchemy",
+      "Alembic",
       "Apache Spark",
       "Hadoop",
       "MapReduce",
@@ -117,7 +127,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative border-t theme-border px-6 py-24 lg:px-8"
+      className="theme-border relative border-t px-6 py-24 lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
         <div className="max-w-3xl">
@@ -125,11 +135,11 @@ export default function Skills() {
             Skills
           </p>
 
-          <h2 className="mt-4 text-3xl font-bold theme-text sm:text-4xl">
+          <h2 className="theme-text mt-4 text-3xl font-bold sm:text-4xl">
             Technologies I work with
           </h2>
 
-          <p className="mt-5 text-base leading-8 theme-muted">
+          <p className="theme-muted mt-5 text-base leading-8">
             My technical background spans AI engineering, backend development,
             full-stack applications, cloud systems, and data technologies.
           </p>
@@ -142,20 +152,20 @@ export default function Skills() {
             return (
               <article
                 key={category.title}
-                className="group relative overflow-hidden rounded-2xl theme-surface theme-border border p-7 transition duration-300 hover:-translate-y-2 hover:border-violet-500/50"
+                className="theme-surface theme-border group relative h-full overflow-hidden rounded-2xl border p-7 transition duration-300 hover:-translate-y-2 hover:border-violet-500/50"
               >
                 <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-violet-600/10 blur-3xl transition group-hover:bg-violet-600/20" />
 
                 <div className="relative">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-violet-500/30 bg-violet-500/10 text-violet-400">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-violet-500/30 bg-violet-500/10 text-violet-600 dark:text-violet-400">
                     <Icon size={27} />
                   </div>
 
-                  <h3 className="mt-6 text-xl font-semibold theme-text">
+                  <h3 className="theme-text mt-6 text-xl font-semibold">
                     {category.title}
                   </h3>
 
-                  <p className="mt-3 min-h-14 text-sm leading-6 theme-muted">
+                  <p className="theme-muted mt-3 min-h-14 text-sm leading-6">
                     {category.description}
                   </p>
 
@@ -163,7 +173,7 @@ export default function Skills() {
                     {category.skills.map((skill) => (
                       <span
                         key={skill}
-                        className="rounded-full border theme-border theme-surface-strong px-3 py-1.5 text-sm theme-muted transition hover:border-violet-400/50 hover:text-violet-300"
+                        className="theme-surface-strong theme-border theme-muted rounded-full border px-3 py-1.5 text-sm transition hover:border-violet-500/50 hover:text-violet-600 dark:hover:text-violet-400"
                       >
                         {skill}
                       </span>
